@@ -1,0 +1,23 @@
+{
+	"luci-app-tak-gateway": {
+		"description": "Grant access to the TAK gateway",
+		"read": {
+			"uci": [ "tak-gateway" ],
+			"file": {
+				"/var/run/tak-gateway.json": [ "read" ],
+				"/etc/init.d/tak-gateway": [ "exec" ]
+			}
+		},
+		"write": {
+			"uci": [ "tak-gateway" ],
+			"cgi-io": [ "upload" ],
+			"file": {
+				"/tmp/tak-gateway-upload.zip": [ "write" ],
+				"/tmp/tak-gateway-upload.p12": [ "write" ],
+				"/usr/bin/tak-gateway import *": [ "exec" ],
+				"/bin/rm /tmp/tak-gateway-upload.zip": [ "exec" ],
+				"/bin/rm /tmp/tak-gateway-upload.p12": [ "exec" ]
+			}
+		}
+	}
+}

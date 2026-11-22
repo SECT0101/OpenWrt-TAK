@@ -1,0 +1,4 @@
+dist/
+bin/
+*.test
+tak-gateway/src/tak-gateway

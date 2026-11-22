@@ -1,0 +1,14 @@
+{
+	"admin/services/tak-gateway": {
+		"title": "TAK Gateway",
+		"order": 60,
+		"action": {
+			"type": "view",
+			"path": "tak-gateway/config"
+		},
+		"depends": {
+			"acl": [ "luci-app-tak-gateway" ],
+			"uci": { "tak-gateway": true }
+		}
+	}
+}
